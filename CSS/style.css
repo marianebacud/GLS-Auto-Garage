@@ -106,7 +106,15 @@ body {
 
     padding: 60px 10%;
 
-    background-color: var(--primary-black);
+    background-color:
+        linear-gradient(
+            rgba(0, 0, 0, 0.95),
+            rgba(0, 0, 0, 0.45)
+        ),
+        url('../images/garage-hero.jpg');
+    background-size: cover;
+    background-position: center;
+
     text-align: left;
 }
 
