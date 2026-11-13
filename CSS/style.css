@@ -1,0 +1,136 @@
+
+/* GLS AUTO GARAGE - BRAND COLORS */
+
+
+:root {
+    --primary-black: #000000;
+    --secondary-black: #171717;
+    --gls-green: #4D996A;
+    --white: #FFFFFF;
+    --light-grey: #CCCCCC;
+}
+
+/* LOGO */
+
+.logo img {
+    width: 180px;
+    height: auto;
+    display: block;
+}
+
+/* General styling */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--primary-black);
+    color: var(--white);
+    font-family: Arial, sans-serif;
+}
+
+/* Navigation */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 6%;
+    background-color: #000000;
+}
+
+
+.logo {
+    color: var(--racing-green);
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.logo span {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    color: var(--racing-green);
+}
+
+/* Booking button */
+
+
+/* BOOKING BUTTON */
+
+.booking-btn {
+    display: inline-block;
+    background-color: var(--gls-green);
+    color: var(--primary-black);
+    padding: 14px 24px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.3s ease;
+    border: 2px solid var(--gls-green);
+}
+
+.booking-btn:hover {
+    background-color: transparent;
+    color: var(--gls-green);
+}
+
+/* Hero section */
+
+
+/* HERO SECTION */
+
+.hero {
+    min-height: 85vh;
+
+    display: flex;
+    align-items: center;
+
+    padding: 60px 10%;
+
+    background-color: var(--primary-black);
+    text-align: left;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.hero-subtitle {
+    color: var(--gls-green);
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: 65px;
+    line-height: 1.1;
+    margin-bottom: 25px;
+    color: var(--white);
+}
+
+.hero-description {
+    color: var(--light-grey);
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
