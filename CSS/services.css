@@ -1,0 +1,134 @@
+
+/* =================================
+   GLS AUTO GARAGE
+   SERVICES PAGE
+================================= */
+
+
+/* SERVICES HEADER */
+
+.services-header {
+    text-align: center;
+    padding: 90px 20px 50px;
+    background-color: var(--primary-black);
+}
+
+.section-subtitle {
+    color: var(--gls-green);
+    letter-spacing: 3px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.services-header h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: var(--white);
+}
+
+.services-header p {
+    color: var(--light-grey);
+    line-height: 1.6;
+}
+
+
+/* SERVICES CONTAINER */
+
+.services-container {
+    padding: 40px 8%;
+    background-color: var(--primary-black);
+}
+
+
+/* SEARCH BAR */
+
+.service-search {
+    max-width: 600px;
+    margin: 0 auto 35px;
+}
+
+.service-search input {
+    width: 100%;
+    padding: 16px;
+    background-color: var(--secondary-black);
+    border: 1px solid #444;
+    border-radius: 5px;
+    color: var(--white);
+    font-size: 16px;
+}
+
+
+/* CATEGORY FILTERS */
+
+.service-filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 40px;
+}
+
+.filter-btn {
+    padding: 12px 20px;
+    border: 1px solid var(--gls-green);
+    background-color: transparent;
+    color: var(--white);
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background-color: var(--gls-green);
+    color: var(--primary-black);
+}
+
+
+/* SERVICES GRID */
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+
+/* MOBILE RESPONSIVENESS */
+
+@media (max-width: 768px) {
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .services-header h1 {
+        font-size: 34px;
+    }
+
+}
+/* BOOK THIS SERVICE BUTTON */
+
+.service-link {
+    display: inline-block;
+    background-color: var(--gls-green);
+    color: var(--primary-black);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 12px 18px;
+    border-radius: 5px;
+    transition: 0.3s ease;
+}
+
+.service-link:hover {
+    background-color: transparent;
+    color: var(--gls-green);
+    border: 1px solid var(--gls-green);
+}

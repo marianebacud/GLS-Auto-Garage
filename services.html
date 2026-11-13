@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Page information -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Our Services | GLS Auto Garage</title>
+
+    <!-- CSS files -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/services.css">
+
+</head>
+
+<body>
+
+    <!-- NAVIGATION BAR -->
+    <header>
+
+        <nav class="navbar">
+
+            <a href="index.html" class="logo">
+                <img src="images/gls-logo.jpeg"
+                     alt="GLS Auto Garage Logo">
+            </a>
+
+            <ul class="nav-links">
+
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+
+            </ul>
+
+            <a
+                href="https://book.squareup.com/appointments/lyp3op0nb0c4c2/location/L87S6J7AKNGX8/services"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="booking-btn">
+
+                Book Appointment
+
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- SERVICES PAGE -->
+    <main>
+
+        <section class="services-header">
+
+            <h1>OUR SERVICES</h1>
+
+            <p>
+                Complete automotive solutions to keep
+                your vehicle running at its best.
+            </p>
+
+        </section>
+
+
+        <!-- SERVICE SEARCH -->
+        <section class="services-container">
+
+            <div class="service-search">
+
+                <input
+                    type="text"
+                    id="serviceSearch"
+                    placeholder="Search for a service..."
+                >
+
+            </div>
+
+
+            <!-- CATEGORY FILTERS -->
+            <div class="service-filters">
+
+                <button class="filter-btn active"
+                        data-category="all">
+                    All Services
+                </button>
+
+                <button class="filter-btn"
+                        data-category="maintenance">
+                    Maintenance
+                </button>
+
+                <button class="filter-btn"
+                        data-category="tires">
+                    Tires & Wheels
+                </button>
+
+                <button class="filter-btn"
+                        data-category="brakes">
+                    Brakes & Suspension
+                </button>
+
+                <button class="filter-btn"
+                        data-category="mechanical">
+                    Mechanical
+                </button>
+
+                <button class="filter-btn"
+                        data-category="custom">
+                    Customization
+                </button>
+
+                <button class="filter-btn"
+                        data-category="other">
+                    Other Services
+                </button>
+
+            </div>
+
+
+            <!-- SERVICES WILL GO HERE -->
+
+            <div class="services-grid" id="servicesGrid">
+
+                <!-- JavaScript will generate service cards here -->
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
