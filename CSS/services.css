@@ -132,3 +132,17 @@
     color: var(--gls-green);
     border: 1px solid var(--gls-green);
 }
+
+/* NO SEARCH RESULTS */
+
+.no-results {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 50px 20px;
+    color: var(--light-grey);
+}
+
+.no-results h3 {
+    color: var(--gls-green);
+    margin-bottom: 10px;
+}

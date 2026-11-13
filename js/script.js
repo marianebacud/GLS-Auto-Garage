@@ -14,7 +14,7 @@ const services = [
     },
     {
         name: "Diagnostic & Inspection",
-        category: "maintenance",
+        categories: ["maintenance","electrical"],
         description: "Vehicle diagnostics and inspections to help identify warning lights, unusual noises, and other issues."
     },
     {
@@ -59,7 +59,7 @@ const services = [
     },
     {
         name: "Battery Check",
-        category: "mechanical",
+        categories: ["mechanical", "electrical"],
         description: "Battery testing to help identify battery health and potential starting issues."
     },
     {
@@ -69,7 +69,7 @@ const services = [
     },
     {
         name: "Electrical & Mechanical Repairs",
-        category: "mechanical",
+        categories: ["mechanical", "electrical"],
         description: "Troubleshooting and repair of vehicle electrical, electronic, and mechanical systems."
     },
     {
@@ -79,7 +79,7 @@ const services = [
     },
     {
         name: "Other Vehicle Issues",
-        category: "mechanical",
+        categories: ["mechanical", "electrical"],
         description: "Not sure what's wrong? Bring your vehicle in for help investigating unusual noises, vibrations, warning lights, and other concerns."
     },
     {
@@ -99,12 +99,12 @@ const services = [
     },
     {
         name: "Kill Switch Installation",
-        category: "custom",
+        categories: ["custom", "electrical"],
         description: "Installation of a hidden anti-theft switch designed to interrupt the vehicle's starting circuit."
     },
     {
         name: "Rustproofing",
-        category: "other",
+        categories: ["other", "maintenance"],
         description: "Protective oil or wax treatments designed to help protect vehicle components against moisture and road salt."
     },
     {
@@ -126,6 +126,16 @@ function displayServices(serviceList) {
 
     // Clear the existing cards
     servicesGrid.innerHTML = "";
+
+if (serviceList.length === 0) {
+    servicesGrid.innerHTML = `
+        <div class="no-results">
+            <h3>No services found</h3>
+            <p>Try another search or select a different category.</p>
+        </div>
+    `;
+    return;
+}
 
     // Go through each service in the list
     serviceList.forEach(function(service) {
@@ -159,20 +169,57 @@ displayServices(services);
 const serviceSearch = document.getElementById("serviceSearch");
 
 serviceSearch.addEventListener("input", function() {
+    filterServices();
+});
 
-    // Get what the customer typed
-    const searchText = serviceSearch.value.toLowerCase();
+// CATEGORY FILTERS
 
-    // Find services that match the search
-    const filteredServices = services.filter(function(service) {
+const filterButtons = document.querySelectorAll(".filter-btn");
 
-        return service.name.toLowerCase().includes(searchText) ||
-               service.description.toLowerCase().includes(searchText);
+let activeCategory = "all";
 
+filterButtons.forEach(function(button) {
+
+    button.addEventListener("click", function() {
+
+        // Get the selected category
+        activeCategory = button.dataset.category;
+
+        // Remove active styling from all buttons
+        filterButtons.forEach(function(btn) {
+            btn.classList.remove("active");
+        });
+
+        // Highlight the selected button
+        button.classList.add("active");
+
+        // Apply the filters
+        filterServices();
     });
-
-    // Display only matching services
-    displayServices(filteredServices);
 
 });
 
+
+// COMBINE SEARCH AND CATEGORY FILTERS
+
+function filterServices() {
+
+    const searchText = serviceSearch.value.toLowerCase();
+
+    const filteredServices = services.filter(function(service) {
+
+        const matchesSearch =
+            service.name.toLowerCase().includes(searchText) ||
+            service.description.toLowerCase().includes(searchText);
+
+        const matchesCategory =
+            activeCategory === "all" ||
+            service.category === activeCategory ||
+            (service.categories && service.categories.includes(activeCategory));
+
+        return matchesSearch && matchesCategory;
+
+    });
+
+    displayServices(filteredServices);
+}
