@@ -195,3 +195,126 @@
     }
 
 }
+
+
+/* OUR EXPERTISE SECTION */
+
+.expertise-section {
+    padding: 100px 10%;
+    background-color: #101010;
+}
+
+/* SECTION HEADER */
+
+.expertise-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 55px;
+}
+
+.expertise-header h2 {
+    color: var(--white);
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.expertise-header > p:last-child {
+    color: var(--light-grey);
+    line-height: 1.7;
+}
+
+/* CARD GRID */
+
+.expertise-container {
+    max-width: 1200px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+/* INDIVIDUAL CARDS */
+
+.expertise-card {
+    background-color: #202823;
+    border: 1px solid #333;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: 0.3s ease;
+}
+
+.expertise-card:hover {
+    transform: translateY(-7px);
+    border-color: var(--gls-green);
+}
+
+/* CARD IMAGES */
+
+.expertise-image {
+    height: 220px;
+    overflow: hidden;
+}
+
+.expertise-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: 0.4s ease;
+}
+
+.expertise-card:hover .expertise-image img {
+    transform: scale(1.05);
+}
+
+/* CARD CONTENT */
+
+.expertise-content {
+    padding: 25px;
+}
+
+.expertise-content h3 {
+    color: var(--white);
+    font-size: 19px;
+    margin-bottom: 15px;
+}
+
+.expertise-content p {
+    color: var(--light-grey);
+    line-height: 1.7;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.expertise-content a {
+    color: var(--gls-green);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.expertise-content a:hover {
+    color: var(--white);
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 900px) {
+    .expertise-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .expertise-section {
+        padding: 65px 7%;
+    }
+
+    .expertise-container {
+        grid-template-columns: 1fr;
+    }
+
+    .expertise-header h2 {
+        font-size: 30px;
+    }
+}
